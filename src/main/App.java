@@ -38,7 +38,7 @@ public class App {
 				System.out.println("Inserisci il titolo del video\n");
 				titolo = input.nextLine();
 				System.out.println("Inserisci la durata del video\n");
-				durata = input.nextInt();
+				durata = Integer.parseInt(input.nextLine());
 				mediaInserito = new Video(titolo, durata);
 				mediaArray[i] = mediaInserito;
 				break;
@@ -46,7 +46,7 @@ public class App {
 				System.out.println("Inserisci il titolo dell'audio\n");
 				titolo = input.nextLine();
 				System.out.println("Inserisci la durata dell'audio\n");
-				durata = input.nextInt();
+				durata = Integer.parseInt(input.nextLine());
 				mediaInserito = new RegistrazioneAudio(titolo, durata);
 				mediaArray[i] = mediaInserito;
 				break;
