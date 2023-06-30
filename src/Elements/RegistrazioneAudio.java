@@ -16,18 +16,18 @@ public class RegistrazioneAudio extends Multimedia implements Riproducibile {
 	}
 
 	// metodi
-	public void alzaVolume(int volume) {
+	public void alzaVolume() {
 		if (volume < 10)
-			this.volume = volume++;
+			this.volume++;
 		else
-			System.out.println("Il volume non può essere alzato ulteriormente");
+			System.out.println("Il volume è già al massimo e non può essere alzato ulteriormente");
 	}
 
-	public void abbassaVolume(int volume) {
+	public void abbassaVolume() {
 		if (volume > 0)
-			this.volume = volume--;
+			this.volume--;
 		else
-			System.out.println("Il volume non può essere diminuito ulteriormente");
+			System.out.println("Il volume è già al minimo e non può essere diminuito ulteriormente");
 	}
 
 	@Override
@@ -38,6 +38,8 @@ public class RegistrazioneAudio extends Multimedia implements Riproducibile {
 		}
 		for (int i = 0; i < durata; i++) {
 			System.out.printf("Titolo: %s \nVolume: %s \n", this.titolo, stringaVolume);
+			if (i == durata - 1)
+				System.out.println("\n-----------------------------------------\n");
 		}
 	}
 
