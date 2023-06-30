@@ -43,6 +43,11 @@ public class RegistrazioneAudio extends Multimedia implements Riproducibile {
 		}
 	}
 
+	@Override
+	public void esegui() {
+		this.play();
+	}
+
 	// setters e getters
 	public int getVolume() {
 		return volume;

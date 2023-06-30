@@ -32,14 +32,14 @@ public class Video extends Multimedia implements Riproducibile {
 	}
 
 	public void alzaLuminosità() {
-		if (volume < 5)
+		if (luminosità < 5)
 			this.luminosità++;
 		else
 			System.out.println("La luminosità non può essere alzata ulteriormente");
 	}
 
 	public void abbassaLiminosità() {
-		if (volume > 0)
+		if (luminosità > 0)
 			this.luminosità--;
 		else
 			System.out.println("La luminosità non può essere diminuita ulteriormente");
@@ -61,6 +61,11 @@ public class Video extends Multimedia implements Riproducibile {
 			if (i == durata - 1)
 				System.out.println("\n-----------------------------------------\n");
 		}
+	}
+
+	@Override
+	public void esegui() {
+		this.play();
 	}
 
 	// setters e getters

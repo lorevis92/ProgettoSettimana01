@@ -35,6 +35,11 @@ public class Immagine extends Multimedia {
 			System.out.println("La luminosità non può essere diminuita ulteriormente");
 	}
 
+	@Override
+	public void esegui() {
+		this.show();
+	}
+
 	// setters e getters
 
 	public int getLuminosità() {
