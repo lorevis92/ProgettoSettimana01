@@ -13,16 +13,18 @@ public class App {
 		// definizione attributi
 		String titolo;
 		int durata;
+		int mediaVisualizzato;
 		Multimedia mediaInserito;
 		Multimedia[] mediaArray;
 		mediaArray = new Multimedia[5];
 
+		// Raccolta file multimedia dall'utente e riempimento array
 		Scanner input = new Scanner(System.in);
 		System.out.println(
 				"Di seguito potrai salvare 5 file multimediali a tua scelta tra un immagine, un video o una traccia audio.\n");
 		for (int i = 0; i < 5; i++) {
 			System.out.println(
-					"Se desideri inserire un'immagine inserisci la parola 'Immagine', se desideri inserire un video inserisci la parola 'Video ed infine se vuoi inserire un file audio inserisici la parola 'Audio'\n\n");
+					"Se desideri inserire un'immagine inserisci la parola 'Immagine'\nSe desideri inserire un video inserisci la parola 'Video'\nSe vuoi inserire un file audio inserisici la parola 'Audio'\n\n");
 			String tipoMediaInserito = input.nextLine();
 			tipoMediaInserito = tipoMediaInserito.toUpperCase();
 			switch (tipoMediaInserito) {
@@ -54,10 +56,25 @@ public class App {
 				i--;
 
 			}
-
 		}
 
-		mediaArray[3].esegui();
+		// Visualizzazione elemento selezionato
+		System.out.println(
+				"Il caricamento dei media è andato a buon fine!\n\nInserisci un numero da 1 a 5 per visualizzare i dati del media inserito, inserisci 0 se non sei interessato a vedere nessuno dei media\n");
+
+		do {
+			mediaVisualizzato = input.nextInt();
+			if (mediaVisualizzato > 0 && mediaVisualizzato <= 5) {
+				mediaVisualizzato--;
+				mediaArray[mediaVisualizzato].esegui();
+				mediaVisualizzato++;
+			}
+			else if (mediaVisualizzato == 0)
+				System.out.println("Visualizzazione media interrotto!");
+			else
+				System.out.println(
+						"Il numero da te inserito non è compreso tra 1 e 5. Inserisci un nuovo compreso tra 1 a 5 per visualizzare i dati del media inserito, inserisci 0 se non sei interessato a vedere altri media caricati");
+		} while (mediaVisualizzato != 0);
 
 		input.close();
 
