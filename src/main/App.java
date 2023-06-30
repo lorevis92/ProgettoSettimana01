@@ -1,5 +1,6 @@
 package main;
 
+import Elements.Immagine;
 import Elements.RegistrazioneAudio;
 import Elements.Video;
 
@@ -16,7 +17,14 @@ public class App {
 		videoProva.abbassaVolume();
 		videoProva.play();
 
+		Immagine immagineProva = new Immagine("ImmagineDiProva");
+		immagineProva.alzaLuminosità();
+		immagineProva.alzaLuminosità();
+		immagineProva.alzaLuminosità();
+		immagineProva.show();
+
 		System.out.println(videoProva.getVolume());
 		System.out.println(videoProva.getLuminosità());
+		System.out.println(immagineProva.getLuminosità());
 	}
 }
