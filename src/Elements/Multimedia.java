@@ -1,5 +1,9 @@
 package Elements;
 
 public abstract class Multimedia {
-	protected String titolo;
+	public String titolo;
+
+	public void play() {
+
+	}
 }
